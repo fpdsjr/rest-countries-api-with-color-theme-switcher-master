@@ -6,6 +6,9 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+
+  background: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.text};
 }
 
   
@@ -16,8 +19,6 @@ export const GlobalStyles = createGlobalStyle`
   --darkGray:hsl(0,0%,52%)
   --veryLightGray:hsl(0,0%,98%)
   --white:hsl(0,0%,100%)
-
   }
-
 
 `;

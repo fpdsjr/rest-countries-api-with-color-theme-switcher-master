@@ -1,11 +1,17 @@
 import React from "react";
 
-function Header() {
+function Header({ toggleTheme }) {
   return (
     <div>
       <h2>Where in the World? </h2>
       <div>
-        <h3>Dark Mode</h3>
+        <button
+          onClick={() => {
+            toggleTheme();
+          }}
+        >
+          Dark Mode
+        </button>
       </div>
     </div>
   );
