@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import Header from "../components/Header";
+import { GlobalStyles } from "../styles/GlobalStyles";
 
 export default function Home({ list }) {
-  console.log(list);
-
   const myLoader = ({ src }) => {
     return `${src}`;
   };
 
   return (
     <section>
+      <Header />
       {list.map(({ country, population, region, capital, flag }) => (
         <div key={country}>
           <ul>
@@ -29,6 +30,8 @@ export default function Home({ list }) {
           </ul>
         </div>
       ))}
+
+      <GlobalStyles />
     </section>
   );
 }
