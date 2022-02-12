@@ -6,6 +6,12 @@ import { ThemeProvider } from "styled-components";
 import { light } from "../../themes/light";
 import { dark } from "../../themes/dark";
 import { GlobalStyles } from "../../styles/GlobalStyles";
+import { Container, CountryInfosSection } from "./countriesStyles.js/Container";
+import { ContentContainer } from "./countriesStyles.js/ContentContainer";
+import {
+  CountryInfos,
+  SecondoryInfos,
+} from "./countriesStyles.js/CountryInfos";
 
 export default function Country({ country }) {
   const [countryInfo] = country;
@@ -31,64 +37,74 @@ export default function Country({ country }) {
     flags,
   } = countryInfo;
 
-  const myLoader = ({ src }) => {
-    return `${src}`;
+  const myLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`;
   };
 
   return (
     <ThemeProvider theme={theme}>
-      <Header toggleTheme={toggleTheme} />
-      <button onClick={() => router.push("/")}> Back</button>
-      <GlobalStyles />
-      <Image
-        src={flags.png}
-        alt="flag img"
-        width={500}
-        height={300}
-        loader={myLoader}
-      />
+      <Container>
+        <GlobalStyles />
+        <Header toggleTheme={toggleTheme} />
+        <button onClick={() => router.push("/")}> Back</button>
+        <ContentContainer>
+          <Image
+            src={flags.png}
+            alt="flag img"
+            width={560}
+            height={400}
+            loader={myLoader}
+          />
 
-      <div>
-        <h1>{name}</h1>
-        <p>
-          <span>Native Name: </span>
-          {nativeName}
-        </p>
-        <p>
-          <span>Population: </span>
-          {population}
-        </p>
-        <p>
-          <span>Region: </span>
-          {region}
-        </p>
-        <p>
-          <span>Sub Region: </span>
-          {subegion}
-        </p>
-        <p>
-          <span>Capital: </span>
-          {capital}
-        </p>
-        <p>
-          <span>Top Level Domain: </span>
-          {topLevelDomain}
-        </p>
-        <p>
-          <span>Currencies: </span>
-          {currencies[0].name}
-        </p>
-        <p>
-          <span>Languages: </span>
-          {languages.map((l) => l.name).join(", ")}
-        </p>
-      </div>
-
-      <div>
-        <p>
-          <span>Border Countries: </span> {borders.map((b) => b).join(" ")}
-        </p>
-      </div>
+          <CountryInfosSection>
+            <h1>{name}</h1>
+            <CountryInfos>
+              <div>
+                <p>
+                  <span>Native Name: </span>
+                  {nativeName}
+                </p>
+                <p>
+                  <span>Population: </span>
+                  {population}
+                </p>
+                <p>
+                  <span>Region: </span>
+                  {region}
+                </p>
+                <p>
+                  <span>Sub Region: </span>
+                  {subegion}
+                </p>
+                <p>
+                  <span>Capital: </span>
+                  {capital}
+                </p>
+              </div>
+              <SecondoryInfos>
+                <p>
+                  <span>Top Level Domain: </span>
+                  {topLevelDomain}
+                </p>
+                <p>
+                  <span>Currencies: </span>
+                  {currencies[0].name}
+                </p>
+                <p>
+                  <span>Languages: </span>
+                  {languages.map((l) => l.name).join(", ")}
+                </p>
+              </SecondoryInfos>
+            </CountryInfos>
+            <div>
+              <p>
+                <span>Border Countries: </span>{" "}
+                {borders.map((b) => b).join(" ")}
+              </p>
+            </div>
+          </CountryInfosSection>
+        </ContentContainer>
+      </Container>
     </ThemeProvider>
   );
 }
