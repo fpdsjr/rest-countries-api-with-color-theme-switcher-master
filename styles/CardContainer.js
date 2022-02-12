@@ -8,6 +8,7 @@ export const CardContainer = styled.div`
   width: 1283px;
   column-gap: 70px;
   row-gap: 76px;
+  margin-top: 20px;
 `;
 
 export const Card = styled.div`

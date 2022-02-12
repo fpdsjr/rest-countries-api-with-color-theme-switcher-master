@@ -6,6 +6,7 @@ export const OptionsContainer = styled.div`
   margin-top: 30px;
   margin-bottom: 28px;
   width: 1283px;
+  margin-top: 50px;
 
   & input {
     width: 480px;
@@ -14,10 +15,12 @@ export const OptionsContainer = styled.div`
     background: ${(props) => props.theme.colors.primary};
     border: none;
     border-radius: 5px;
-    padding: 0px 50px;
+    padding: 0px 75px;
   }
 
   & input::placeholder {
+    font-size: 15px;
+    font-weight: 300;
     color: ${(props) => props.theme.colors.text};
   }
 

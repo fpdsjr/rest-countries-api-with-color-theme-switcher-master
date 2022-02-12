@@ -1,8 +1,9 @@
 import React from "react";
 
-function Select() {
+function Select({ setSelectValue }) {
   return (
-    <select>
+    <select onChange={(e) => setSelectValue(e.target.value)}>
+      <option value="">Filter by Region</option>
       <option value="Africa">Africa</option>
       <option value="America">America</option>
       <option value="Asia">Asia</option>

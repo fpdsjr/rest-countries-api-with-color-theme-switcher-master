@@ -24,13 +24,16 @@ import searchIcon from "../public/assets/search.svg";
 export default function Home({ list }) {
   const [theme, setTheme] = useState(light);
   const [inputValue, setInputValue] = useState("");
+  const [selectValue, setSelectValue] = useState("");
+
+  console.log(selectValue);
 
   const toggleTheme = () => {
     setTheme(theme.title === "light" ? dark : light);
   };
 
-  const myLoader = ({ src }) => {
-    return `${src}`;
+  const myLoader = ({ src, width, quality }) => {
+    return `${src}?w=${width}&q=${quality || 75}`;
   };
 
   return (
@@ -42,40 +45,47 @@ export default function Home({ list }) {
           <SearchIconWrapper>
             <Image src={searchIcon} width="20" height="20" alt="text" />
           </SearchIconWrapper>
-          <Select />
+          <Select selectValue={selectValue} setSelectValue={setSelectValue} />
         </OptionsContainer>
         <CardContainer>
-          {list.map(({ country, population, region, capital, flag }) => (
-            <Card key={country}>
-              {/* <Link
+          {list
+            .filter(({ region }) =>
+              region.toLowerCase().includes(selectValue.toLowerCase())
+            )
+            .filter(({ country }) => {
+              return country.toLowerCase().includes(inputValue.toLowerCase());
+            })
+            .map(({ country, population, region, capital, flag }) => (
+              <Card key={country}>
+                {/* <Link
                 className="image-wrapper"
                 passHref
                 href={`/countries/${country}`}
               > */}
-              <ImageWrapper>
-                <Image
-                  src={flag}
-                  alt="flag img"
-                  width={264}
-                  height={160}
-                  loader={myLoader}
-                />
-              </ImageWrapper>
-              {/* </Link> */}
-              <InfoCardContainer>
-                <h1>{country}</h1>
-                <li>
-                  <span>Population:</span> {population.toFixed(2)}
-                </li>
-                <li>
-                  <span>Region:</span> {region}
-                </li>
-                <li>
-                  <span>Capital:</span> {capital}
-                </li>
-              </InfoCardContainer>
-            </Card>
-          ))}
+                <ImageWrapper>
+                  <Image
+                    src={flag}
+                    alt="flag img"
+                    width={264}
+                    height={160}
+                    loader={myLoader}
+                  />
+                </ImageWrapper>
+                {/* </Link> */}
+                <InfoCardContainer>
+                  <h1>{country}</h1>
+                  <li>
+                    <span>Population:</span> {population.toFixed(2)}
+                  </li>
+                  <li>
+                    <span>Region:</span> {region}
+                  </li>
+                  <li>
+                    <span>Capital:</span> {capital}
+                  </li>
+                </InfoCardContainer>
+              </Card>
+            ))}
         </CardContainer>
         <GlobalStyles />
       </Container>
