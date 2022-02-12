@@ -7,7 +7,7 @@ function Header({ toggleTheme }) {
   return (
     <HeaderStyle>
       <HeaderSizer>
-        <h1>Where in the World? </h1>
+        <h1>Where in the world? </h1>
         <div>
           <ImageWrap>
             <Image

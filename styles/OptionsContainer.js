@@ -31,3 +31,11 @@ export const OptionsContainer = styled.div`
     border: none;
   }
 `;
+
+export const SearchIconWrapper = styled.span`
+  & > span {
+    position: relative;
+    right: 755px;
+    top: 20px;
+  }
+`;

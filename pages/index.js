@@ -11,11 +11,15 @@ import {
   ImageWrapper,
   InfoCardContainer,
 } from "../styles/CardContainer";
-import { OptionsContainer } from "../styles/OptionsContainer";
+import {
+  OptionsContainer,
+  SearchIconWrapper,
+} from "../styles/OptionsContainer";
 import { ThemeProvider } from "styled-components";
 import { light } from "../themes/light";
 import { dark } from "../themes/dark";
 import { useState } from "react";
+import searchIcon from "../public/assets/search.svg";
 
 export default function Home({ list }) {
   const [theme, setTheme] = useState(light);
@@ -35,6 +39,9 @@ export default function Home({ list }) {
       <Container>
         <OptionsContainer>
           <Input inputValue={inputValue} setInputValue={setInputValue} />
+          <SearchIconWrapper>
+            <Image src={searchIcon} width="20" height="20" alt="text" />
+          </SearchIconWrapper>
           <Select />
         </OptionsContainer>
         <CardContainer>
