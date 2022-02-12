@@ -26,8 +26,6 @@ export default function Home({ list }) {
   const [inputValue, setInputValue] = useState("");
   const [selectValue, setSelectValue] = useState("");
 
-  console.log(selectValue);
-
   const toggleTheme = () => {
     setTheme(theme.title === "light" ? dark : light);
   };
@@ -57,21 +55,21 @@ export default function Home({ list }) {
             })
             .map(({ country, population, region, capital, flag }) => (
               <Card key={country}>
-                {/* <Link
-                className="image-wrapper"
-                passHref
-                href={`/countries/${country}`}
-              > */}
-                <ImageWrapper>
-                  <Image
-                    src={flag}
-                    alt="flag img"
-                    width={264}
-                    height={160}
-                    loader={myLoader}
-                  />
-                </ImageWrapper>
-                {/* </Link> */}
+                <Link
+                  className="image-wrapper"
+                  passHref
+                  href={`/countries/${country}`}
+                >
+                  <ImageWrapper>
+                    <Image
+                      src={flag}
+                      alt="flag img"
+                      width={264}
+                      height={160}
+                      loader={myLoader}
+                    />
+                  </ImageWrapper>
+                </Link>
                 <InfoCardContainer>
                   <h1>{country}</h1>
                   <li>

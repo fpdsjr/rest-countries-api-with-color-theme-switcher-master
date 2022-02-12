@@ -1,7 +1,21 @@
 import Image from "next/image";
+import { useState } from "react";
+import { useRouter } from "next/router";
+import Header from "../../components/Header";
+import { ThemeProvider } from "styled-components";
+import { light } from "../../themes/light";
+import { dark } from "../../themes/dark";
+import { GlobalStyles } from "../../styles/GlobalStyles";
 
 export default function Country({ country }) {
   const [countryInfo] = country;
+  const [theme, setTheme] = useState(light);
+
+  const toggleTheme = () => {
+    setTheme(theme.title === "light" ? dark : light);
+  };
+
+  const router = useRouter();
 
   const {
     name,
@@ -22,7 +36,10 @@ export default function Country({ country }) {
   };
 
   return (
-    <div>
+    <ThemeProvider theme={theme}>
+      <Header toggleTheme={toggleTheme} />
+      <button onClick={() => router.push("/")}> Back</button>
+      <GlobalStyles />
       <Image
         src={flags.png}
         alt="flag img"
@@ -72,7 +89,7 @@ export default function Country({ country }) {
           <span>Border Countries: </span> {borders.map((b) => b).join(" ")}
         </p>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
 
