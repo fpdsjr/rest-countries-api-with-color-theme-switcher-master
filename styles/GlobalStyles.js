@@ -6,12 +6,9 @@ export const GlobalStyles = createGlobalStyle`
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-
-  /* background: ${(props) => props.theme.colors.background}; */
   color: ${(props) => props.theme.colors.text};
 }
 
-  
 :root {
   --darkBlue: hsl(209, 23%, 22%)
   --verDarkBlue:hsl(207,26%,17%)

@@ -11,6 +11,7 @@ import {
   ImageWrapper,
   InfoCardContainer,
 } from "../styles/CardContainer";
+import { OptionsContainer } from "../styles/OptionsContainer";
 import { ThemeProvider } from "styled-components";
 import { light } from "../themes/light";
 import { dark } from "../themes/dark";
@@ -32,10 +33,10 @@ export default function Home({ list }) {
     <ThemeProvider theme={theme}>
       <Header toggleTheme={toggleTheme} />
       <Container>
-        <div>
+        <OptionsContainer>
           <Input inputValue={inputValue} setInputValue={setInputValue} />
           <Select />
-        </div>
+        </OptionsContainer>
         <CardContainer>
           {list.map(({ country, population, region, capital, flag }) => (
             <Card key={country}>

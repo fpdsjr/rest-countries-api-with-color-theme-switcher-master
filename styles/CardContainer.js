@@ -5,16 +5,19 @@ export const CardContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  width: 1283px;
+  column-gap: 70px;
+  row-gap: 76px;
 `;
 
 export const Card = styled.div`
   background-color: ${(props) => props.theme.colors.primary};
+  width: 264px;
   height: 335px;
   list-style: none;
   margin: 20px;
   border-radius: 5px;
-  margin-right: 31px;
-  margin-bottom: 55px;
+  margin: auto;
 `;
 
 export const ImageWrapper = styled.span`
