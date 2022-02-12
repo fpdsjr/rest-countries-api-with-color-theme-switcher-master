@@ -28,6 +28,6 @@ export const ImageWrap = styled.span`
 
 export const HeaderSizer = styled.div`
   display: flex;
-  width: 1283px;
+  width: 1273px;
   justify-content: space-between;
 `;
