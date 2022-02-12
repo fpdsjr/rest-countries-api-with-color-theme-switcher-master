@@ -19,26 +19,28 @@ export const OptionsContainer = styled.div`
   }
 
   & input::placeholder {
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
     color: ${(props) => props.theme.colors.text};
   }
 
   & select {
-    padding: 0px 20px;
+    padding: 0px 23px;
+    font-size: 15px;
     margin-right: 5px;
     width: 200px;
     background: ${(props) => props.theme.colors.primary};
     color: ${(props) => props.theme.colors.text};
     border-radius: 5px;
     border: none;
+    font-weight: 300;
   }
 `;
 
 export const SearchIconWrapper = styled.span`
   & > span {
     position: relative;
-    right: 755px;
-    top: 20px;
+    right: 740px;
+    top: 17px;
   }
 `;
