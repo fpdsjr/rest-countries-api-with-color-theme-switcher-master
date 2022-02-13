@@ -12,6 +12,7 @@ export const HeaderStyle = styled.header`
   }
 
   & button {
+    cursor: pointer;
     border: none;
     background: none;
     font-size: 15px;
@@ -30,4 +31,8 @@ export const HeaderSizer = styled.div`
   display: flex;
   width: 1273px;
   justify-content: space-between;
+`;
+
+export const DarkModeDiv = styled.div`
+  cursor: pointer;
 `;
