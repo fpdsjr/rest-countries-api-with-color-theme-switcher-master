@@ -22,6 +22,7 @@ export const Card = styled.div`
 `;
 
 export const ImageWrapper = styled.span`
+  cursor: pointer;
   & > span {
     border-radius: 5px 5px 0px 0px;
   }

@@ -54,7 +54,7 @@ export default function Country({ country }) {
         <Header toggleTheme={toggleTheme} />
         <ContentContainer>
           <FlagContainer>
-            <button onClick={() => router.push("/")}>
+            <button type="button" onClick={() => router.push("/")}>
               <p>Back</p>
             </button>
             <ArrowContainer>

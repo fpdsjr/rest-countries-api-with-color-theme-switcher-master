@@ -14,6 +14,7 @@ export const FlagContainer = styled.div`
   align-items: flex-start;
 
   button {
+    cursor: pointer;
     position: absolute;
     top: 145px;
     border: 0;
