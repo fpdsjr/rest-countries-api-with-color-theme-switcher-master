@@ -6,7 +6,7 @@ export const HeaderStyle = styled.header`
   justify-content: center;
   background: ${(props) => props.theme.colors.primary};
   align-items: center;
-
+  box-shadow: 2px 1px 3px 1px #00000020;
   & h1 {
     font-size: 24px;
   }
@@ -21,6 +21,7 @@ export const HeaderStyle = styled.header`
 
 export const ImageWrap = styled.span`
   & > span {
+    filter: ${(props) => props.theme.colors.svg};
     position: relative;
     top: 5px;
     right: 5px;

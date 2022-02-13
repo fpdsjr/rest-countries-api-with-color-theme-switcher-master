@@ -33,6 +33,7 @@ export const FlagContainer = styled.div`
 
 export const ArrowContainer = styled.div`
   & > span {
+    filter: ${(props) => props.theme.colors.svg};
     position: relative;
     bottom: 97px;
     left: 32px;

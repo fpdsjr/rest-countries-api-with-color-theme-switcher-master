@@ -19,6 +19,8 @@ export const Card = styled.div`
   margin: 20px;
   border-radius: 5px;
   margin: auto;
+
+  box-shadow: 2px 1px 3px 1px #00000020;
 `;
 
 export const ImageWrapper = styled.span`

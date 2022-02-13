@@ -16,6 +16,7 @@ export const OptionsContainer = styled.div`
     border: none;
     border-radius: 5px;
     padding: 0px 75px;
+    box-shadow: 2px 1px 3px 1px #00000020;
   }
 
   & input::placeholder {
@@ -34,11 +35,13 @@ export const OptionsContainer = styled.div`
     border-radius: 5px;
     border: none;
     font-weight: 300;
+    box-shadow: 2px 1px 3px 1px #00000020;
   }
 `;
 
 export const SearchIconWrapper = styled.span`
   & > span {
+    filter: ${(props) => props.theme.colors.svgSecondColor};
     position: relative;
     right: 740px;
     top: 17px;
