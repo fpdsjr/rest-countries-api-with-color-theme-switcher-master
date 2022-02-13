@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import BorderCountry from "../../components/BorderCountry";
 import Header from "../../components/Header";
 import { ThemeProvider } from "styled-components";
 import { light } from "../../themes/light";
@@ -110,10 +111,7 @@ export default function Country({ country }) {
               </SecondoryInfos>
             </CountryInfos>
             <BorderInfo>
-              <p>
-                <span>Border Countries: </span>{" "}
-                {borders ? borders.map((b) => b).join(" ") : "none"}
-              </p>
+              <BorderCountry borders={borders} />
             </BorderInfo>
           </CountryInfosSection>
         </ContentContainer>
