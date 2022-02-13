@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { BorderCountryButton } from "./BorderCountrystyle";
 
 function BorderCountry({ borders }) {
   const [boardersCountries, setBoardersCountries] = useState([]);
@@ -11,31 +12,34 @@ function BorderCountry({ borders }) {
   }, []);
 
   const fetchApiCountry = async () => {
-    const string = borders.join(",");
-    const boardersCountries = await fetch(
-      `https://restcountries.com/v2/alpha?codes=${string}`
-    );
-    const result = await boardersCountries.json();
-    const boardersCountriesNames = result.map((country) => country.name);
-    setBoardersCountries(boardersCountriesNames);
+    if (borders) {
+      const string = borders.join(",");
+      const boardersCountries = await fetch(
+        `https://restcountries.com/v2/alpha?codes=${string}`
+      );
+      const result = await boardersCountries.json();
+      const boardersCountriesNames = result.map((country) => country.name);
+      setBoardersCountries(boardersCountriesNames);
+    }
   };
 
   const buttonRender = () => {
     return boardersCountries.map((country) => (
-      <button
+      <BorderCountryButton
         key={country}
         type="submit"
         onClick={() => router.push(`/countries/${country}`)}
       >
         {country}
-      </button>
+      </BorderCountryButton>
     ));
   };
 
   return (
     <>
       <p>
-        <span>Border Countries:</span> {buttonRender()}
+        <span>Border Countries:</span>{" "}
+        {boardersCountries ? buttonRender() : null}
       </p>
     </>
   );
