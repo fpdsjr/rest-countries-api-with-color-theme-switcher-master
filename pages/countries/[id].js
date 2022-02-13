@@ -7,11 +7,17 @@ import { light } from "../../themes/light";
 import { dark } from "../../themes/dark";
 import { GlobalStyles } from "../../styles/GlobalStyles";
 import { Container, CountryInfosSection } from "./countriesStyles.js/Container";
-import { ContentContainer } from "./countriesStyles.js/ContentContainer";
+import {
+  ContentContainer,
+  FlagContainer,
+  ArrowContainer,
+} from "./countriesStyles.js/ContentContainer";
 import {
   CountryInfos,
   SecondoryInfos,
+  BorderInfo,
 } from "./countriesStyles.js/CountryInfos";
+import leftArrow from "../../public/assets/arrow-left-solid.svg";
 
 export default function Country({ country }) {
   const [countryInfo] = country;
@@ -28,7 +34,7 @@ export default function Country({ country }) {
     nativeName,
     population,
     region,
-    subegion,
+    subregion,
     capital,
     topLevelDomain,
     currencies,
@@ -46,15 +52,22 @@ export default function Country({ country }) {
       <Container>
         <GlobalStyles />
         <Header toggleTheme={toggleTheme} />
-        <button onClick={() => router.push("/")}> Back</button>
         <ContentContainer>
-          <Image
-            src={flags.png}
-            alt="flag img"
-            width={560}
-            height={400}
-            loader={myLoader}
-          />
+          <FlagContainer>
+            <button onClick={() => router.push("/")}>
+              <p>Back</p>
+            </button>
+            <ArrowContainer>
+              <Image src={leftArrow} alt="arrow img" width={16} height={16} />
+            </ArrowContainer>
+            <Image
+              src={flags.png}
+              alt="flag img"
+              width={560}
+              height={400}
+              loader={myLoader}
+            />
+          </FlagContainer>
 
           <CountryInfosSection>
             <h1>{name}</h1>
@@ -66,7 +79,7 @@ export default function Country({ country }) {
                 </p>
                 <p>
                   <span>Population: </span>
-                  {population}
+                  {population.toLocaleString("en-US")}
                 </p>
                 <p>
                   <span>Region: </span>
@@ -74,7 +87,7 @@ export default function Country({ country }) {
                 </p>
                 <p>
                   <span>Sub Region: </span>
-                  {subegion}
+                  {subregion}
                 </p>
                 <p>
                   <span>Capital: </span>
@@ -96,12 +109,12 @@ export default function Country({ country }) {
                 </p>
               </SecondoryInfos>
             </CountryInfos>
-            <div>
+            <BorderInfo>
               <p>
                 <span>Border Countries: </span>{" "}
-                {borders.map((b) => b).join(" ")}
+                {borders ? borders.map((b) => b).join(" ") : "none"}
               </p>
-            </div>
+            </BorderInfo>
           </CountryInfosSection>
         </ContentContainer>
       </Container>

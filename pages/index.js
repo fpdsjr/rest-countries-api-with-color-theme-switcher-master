@@ -73,7 +73,8 @@ export default function Home({ list }) {
                 <InfoCardContainer>
                   <h1>{country}</h1>
                   <li>
-                    <span>Population:</span> {population.toFixed(2)}
+                    <span>Population:</span>{" "}
+                    {population.toLocaleString("en-US")}
                   </li>
                   <li>
                     <span>Region:</span> {region}
