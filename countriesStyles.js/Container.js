@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const hello = "tmj";
+
 export const Container = styled.div`
   width: 100vw;
   height: 100vh;
@@ -19,3 +21,5 @@ export const CountryInfosSection = styled.div`
     margin-bottom: 10px;
   }
 `;
+
+export default hello;

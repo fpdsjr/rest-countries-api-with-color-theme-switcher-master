@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+const hello = "tmj";
+
 export const ContentContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -53,3 +55,5 @@ export const ArrowContainer = styled.div`
     }
   }
 `;
+
+export default hello;

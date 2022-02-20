@@ -7,17 +7,20 @@ import { ThemeProvider } from "styled-components";
 import { light } from "../../themes/light";
 import { dark } from "../../themes/dark";
 import { GlobalStyles } from "../../styles/GlobalStyles";
-import { Container, CountryInfosSection } from "./countriesStyles.js/Container";
+import {
+  Container,
+  CountryInfosSection,
+} from "../../countriesStyles.js/Container";
 import {
   ContentContainer,
   FlagContainer,
   ArrowContainer,
-} from "./countriesStyles.js/ContentContainer";
+} from "../../countriesStyles.js/ContentContainer";
 import {
   CountryInfos,
   SecondoryInfos,
   BorderInfo,
-} from "./countriesStyles.js/CountryInfos";
+} from "../../countriesStyles.js/CountryInfos";
 import leftArrow from "../../public/assets/arrow-left-solid.svg";
 
 export default function Country({ country }) {
