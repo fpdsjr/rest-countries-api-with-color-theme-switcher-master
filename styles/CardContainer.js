@@ -9,6 +9,14 @@ export const CardContainer = styled.div`
   column-gap: 70px;
   row-gap: 76px;
   margin-top: 20px;
+
+  @media (max-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    row-gap: 40px;
+  }
 `;
 
 export const Card = styled.div`

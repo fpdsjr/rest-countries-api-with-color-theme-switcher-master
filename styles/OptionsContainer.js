@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const OptionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
   margin-bottom: 28px;
   width: 1283px;
   margin-top: 50px;
@@ -36,6 +35,21 @@ export const OptionsContainer = styled.div`
     border: none;
     font-weight: 300;
     box-shadow: 2px 1px 3px 1px #00000020;
+  }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    width: 450px;
+
+    & input {
+      width: 440px;
+      height: 50px;
+    }
+
+    & select {
+      width: 220px;
+      height: 50px;
+    }
   }
 `;
 

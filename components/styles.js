@@ -17,6 +17,10 @@ export const HeaderStyle = styled.header`
     background: none;
     font-size: 15px;
   }
+
+  @media (max-width: 700px) {
+    padding: 1rem;
+  }
 `;
 
 export const ImageWrap = styled.span`
