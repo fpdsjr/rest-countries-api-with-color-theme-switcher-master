@@ -14,10 +14,15 @@ export const CountryInfos = styled.div`
   span {
     font-weight: 300;
   }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    gap: 0px;
+  }
 `;
 
 export const SecondoryInfos = styled.div``;
 
 export const BorderInfo = styled.div`
-  margin-top: 60px;
+  margin-bottom: 50px;
 `;

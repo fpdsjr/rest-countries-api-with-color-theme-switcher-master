@@ -6,6 +6,11 @@ export const ContentContainer = styled.div`
   align-items: center;
   height: 80%;
   gap: 145px;
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+    margin-top: 145px;
+  }
 `;
 
 export const FlagContainer = styled.div`
@@ -28,6 +33,11 @@ export const FlagContainer = styled.div`
     p {
       margin-left: 20px;
     }
+
+    @media (max-width: 700px) {
+      width: 140px;
+      margin-left: 15px;
+    }
   }
 `;
 
@@ -37,5 +47,9 @@ export const ArrowContainer = styled.div`
     position: relative;
     bottom: 97px;
     left: 32px;
+
+    @media (max-width: 700px) {
+      bottom: 50px;
+    }
   }
 `;

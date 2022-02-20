@@ -14,4 +14,8 @@ export const CountryInfosSection = styled.div`
   h1 {
     font-size: 33px;
   }
+
+  @media (max-width: 700px) {
+    margin-bottom: 10px;
+  }
 `;
